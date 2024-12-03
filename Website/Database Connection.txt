@@ -1,0 +1,13 @@
+<?php
+$dsn = 'mysql:host=localhost;dbname=flight_management';
+$username = 'root'; // Change this to your DB username
+$password = ''; // Change this to your DB password
+
+try {
+    $db = new PDO($dsn, $username, $password);
+} catch (PDOException $e) {
+    $error_message = $e->getMessage();
+    include('../view/error.php'); // Ensure you have an error.php for graceful error handling
+    exit();
+}
+?>
